@@ -31,7 +31,9 @@ class GPT {
   async interpretResult(query, result) {
     const queryRequest = `Given the following query: ${query} made to the following database: ${
       this.dbModelString
-    }\nPlease give a short user-friendly version of these results: ${JSON.stringify(result)}`;
+    }\nPlease give a short user-friendly version of these results: ${JSON.stringify(
+      result
+    )}. If there was an error, just state there was an error without explaining the error.`;
     const response = await fetch(this.config.gpt.url, {
       method: 'POST',
       headers: {

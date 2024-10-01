@@ -58,6 +58,8 @@ class Database {
     try {
       const [rows] = await connection.query(querySQL);
       return rows;
+    } catch (err) {
+      return err;
     } finally {
       connection.end();
     }
