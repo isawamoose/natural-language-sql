@@ -1,5 +1,5 @@
 export class MessageService {
-  async getResponse(message: string): Promise<string> {
+  async getResponse(message: string): Promise<{ querySQL: string; interpretedResult: string }> {
     const response = await fetch('http://localhost:3000/query', {
       method: 'POST',
       headers: {
@@ -7,6 +7,7 @@ export class MessageService {
       },
       body: JSON.stringify({ query: message }),
     });
-    return await response.text();
+    const res = await response.json();
+    return res;
   }
 }

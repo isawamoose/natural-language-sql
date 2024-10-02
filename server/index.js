@@ -17,7 +17,7 @@ app.post('/query', async (req, res) => {
   const querySQL = await gpt.generateSQL(query);
   const result = await db.query(querySQL);
   const interpretedResult = await gpt.interpretResult(query, result);
-  res.send(interpretedResult);
+  res.json({ querySQL, interpretedResult });
 });
 
 app.use('*', (req, res) => {

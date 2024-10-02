@@ -21,8 +21,8 @@ export function App() {
       setMessages(newMessages);
 
       // Get bot's response and add it to the messages array
-      const response = await messageService.getResponse(input);
-      setMessages([{ message: response, isBot: true }, ...newMessages]);
+      const { querySQL, interpretedResult } = await messageService.getResponse(input);
+      setMessages([{ message: interpretedResult, isBot: true }, { message: querySQL, isBot: true }, ...newMessages]);
 
       setInput('');
     }
