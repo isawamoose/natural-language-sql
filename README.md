@@ -15,6 +15,8 @@ I also tried a single shot approach, providing the LLM with an example query and
 ![](twoMinuteRunners.png)
 ![](addJohnSmith.png)
 ![](johnSmith400m.png)
+![](heaviestTime.png)
+![](shortestHeighWeight.png)
 
 ## Unsuccessful query
 ![](fastest3000m.png)
